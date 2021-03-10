@@ -1,0 +1,13 @@
+{
+  "name": "danilla",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/standard-DCMA/danilla.git",
+  "license": "MIT",
+  "scripts": {
+    "commit": "git-cz"
+  },
+  "devDependencies": {
+    "git-cz": "^4.7.6"
+  }
+}
