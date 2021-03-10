@@ -5,9 +5,11 @@
   "repository": "https://github.com/standard-DCMA/danilla.git",
   "license": "MIT",
   "scripts": {
-    "commit": "git-cz"
+    "commit": "git-cz",
+    "build:danilla": "lerna exec --scope danilla -- yarn build"
   },
   "devDependencies": {
-    "git-cz": "^4.7.6"
+    "git-cz": "^4.7.6",
+    "lerna": "^3.22.1"
   }
 }
