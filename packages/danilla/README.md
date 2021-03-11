@@ -1,11 +1,11 @@
 # `danilla`
 
-> TODO: description
+> General JavaScript tools library collection
 
 ## Usage
 
 ```
-const danilla = require('danilla');
+import { xxx } from 'danilla';
 
-// TODO: DEMONSTRATE API
+// your code here
 ```
