@@ -6,7 +6,8 @@
   "license": "MIT",
   "scripts": {
     "commit": "git-cz",
-    "build:danilla": "lerna exec --scope danilla -- yarn build"
+    "build:danilla": "lerna exec --scope danilla -- yarn build",
+    "test:danilla": "lerna exec --scope danilla -- yarn test"
   },
   "devDependencies": {
     "git-cz": "^4.7.6",

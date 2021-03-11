@@ -1,5 +1,1 @@
-function sayWorld(word: string) {
-  console.log('hello ' + word);
-}
-
-
+export { default as add } from './add';
