@@ -1,0 +1,46 @@
+name: publish
+
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - main
+
+jobs:
+  prebuild:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: setup node
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+      - name: test
+        run: |
+          yarn bootstrap
+          yarn test
+        env:
+          CI: true
+
+  publish-npm:
+    needs: prebuild
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+          registry-url: https://registry.npmjs.org/
+      - name: build
+        run: |
+          yarn bootstrap
+          yarn build
+      - name: publish package
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          yarn patch
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.npm_token}}

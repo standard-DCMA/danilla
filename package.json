@@ -1,13 +1,17 @@
 {
   "name": "danilla",
-  "version": "1.0.0",
+  "version": "1.1.1",
   "main": "index.js",
   "repository": "https://github.com/standard-DCMA/danilla.git",
   "license": "MIT",
   "scripts": {
     "commit": "git-cz",
     "build:danilla": "lerna exec --scope danilla -- yarn build",
-    "test:danilla": "lerna exec --scope danilla -- yarn test"
+    "test:danilla": "lerna exec --scope danilla -- yarn test",
+    "bootstrap": "lerna bootstrap",
+    "test": "yarn test:danilla",
+    "build": "yarn build:danilla",
+    "patch": "lerna version patch --yes"
   },
   "devDependencies": {
     "git-cz": "^4.7.6",
